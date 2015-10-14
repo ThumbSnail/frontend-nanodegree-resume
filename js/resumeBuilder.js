@@ -128,18 +128,20 @@ var education = {
 var work = {
 	'jobs': [
 		{
-			'employer': 'Self / Upwork',
+			'employer': 'Upwork (Self)',
 			'title': 'Freelance Writer',
 			'location': 'Seattle, WA',
 			'dates': 'June 2015 - Oct 2015',
+			'url': 'http://www.upwork.com/',
 			'description': 'Primarily worked as an iPad game reviewer at iPadGamesZone.com.'
 							+ ' Also did various editing and transcription jobs.'
 		},
 		{
-			'employer': 'Self / ThumbSnail Studios',
+			'employer': 'ThumbSnail Studios (Self)',
 			'title': 'Mobile Game Developer',
 			'location': 'Seattle, WA',
 			'dates': 'May 2014 - May 2015',
+			'url': 'http://thumbsnail.wordpress.com/',
 			'description': 'Developed three games for Android/iOS, using C++/Cocos2d-x and C#/Unity.'
 							+ ' Did all the design, programming, testing, artwork, and music/sound.'
 		},
@@ -148,11 +150,28 @@ var work = {
 			'title': 'English as a Foreign Language Teacher',
 			'location': 'Geoje-do, South Korea',
 			'dates': 'August 2009 - January 2010',
+			'url': 'http://www.epik.go.kr/',
 			'description': 'Taught 1st through 6th grades at three different schools.'
 		}
 	],
 	display: function() {
-/* KEY ATTENTION :  write this functioN!*/
+		for (var i = 0; i < this.jobs.length; i++) {
+			//the div to hold the work info:
+			$('#workExperience').append(HTMLworkStart);
+
+			//the actual job
+			var jobAll = HTMLworkJob.replace('#', this.jobs[i].url);
+			jobAll = jobAll.replace('%data%', this.jobs[i].employer);
+			jobAll = jobAll.replace('%role%', this.jobs[i].title);
+			$('.work-entry').last().append(jobAll);
+
+			//Date / Place
+			$('.work-entry').last().append(HTMLworkDates.replace('%data%', this.jobs[i].dates));
+			$('.work-entry').last().append(HTMLworkLocation.replace('%data%', this.jobs[i].location));
+
+			//Description
+			$('.work-entry').last().append(HTMLworkDescription.replace('%data%', this.jobs[i].description));
+		}
 	}
 };
 
@@ -166,7 +185,9 @@ var projects = {
 			'images': [
 				'images/ClimbyCharts1x.png',
 				'images/ClimbyCharts2x.png'
-			]
+			],
+			'url': 'http://thumbsnail.wordpress.com/games/climbycharts',
+			'alt': 'Climby Charts icon'
 		},
 		{
 			'title': 'Super Hearts',
@@ -176,24 +197,51 @@ var projects = {
 			'images': [
 				'images/SuperHearts1x.png',
 				'images/SuperHearts2x.png'
-			]
+			],
+			'url': 'http://thumbsnail.wordpress.com/games/superhearts',
+			'alt': 'Super Hearts icon'
 		},
 		{
 			'title': 'Super Sevens',
-			'date': 'Released Nov/Dec 2014',
+			'date': 'Released Nov (iOS) and Dec (Android) 2014',
 			'description': 'The classic card game "Sevens" with all kinds of features.'
 							+ ' Made with C++ and Cocos2d-x.',
 			'images': [
 				'images/SuperSevens1x.png',
 				'images/SuperSevens2x.png'
-			]
+			],
+			'url': 'http://thumbsnail.wordpress.com/games/supersevens',
+			'alt': 'Super Sevens icon'
 		}
 	],
 	display: function() {
-/* KEY ATTENTION :  write this functioN!*/
+		for (var i = 0; i < this.portfolio.length; i++) {
+			//div to contain the projects
+			$('#projects').append(HTMLprojectStart);
+
+			//full project link and name
+			var nameLink = HTMLprojectTitle.replace('#', this.portfolio[i].url);
+			nameLink = nameLink.replace('%data%', this.portfolio[i].title);
+			$('.project-entry').last().append(nameLink);
+
+			//release dates
+			$('.project-entry').last().append(HTMLprojectDates.replace('%data%', this.portfolio[i].date));
+
+			//description
+			$('.project-entry').last().append(HTMLprojectDescription.replace('%data%', this.portfolio[i].description));
+
+			//image (and srcset and alt)
+			var imageAll = HTMLprojectImage.replace('%alt%', this.portfolio[i].alt);
+			imageAll = imageAll.replace(/%pic2%/g, this.portfolio[i].images[1]);
+			imageAll = imageAll.replace('%pic1%', this.portfolio[i].images[0]);
+			console.log(imageAll);
+			$('.project-entry').last().append(imageAll);
+		}
 	}
 };
 
-
+//Display all of the resume:
 bio.display();
 education.display();
+work.display();
+projects.display();
