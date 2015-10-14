@@ -4,6 +4,15 @@
  *
 */
 
+/*
+	
+	eval() discovered via:
+	stackoverflow.com/questions/5613834/convert-string-to-variable-name-in-javascript
+*/
+function propToVarName(property) {
+	return eval('HTML' + property);
+}
+
 var bio = {
 	'name': 'Jeff Derrenberger',
  	'role': 'Front-End Web Developer',
@@ -14,11 +23,30 @@ var bio = {
  		'twitter': '@...I don\'t use Twitter',
  		'location': 'Seattle, WA'
  	},
- 	'welcomeMessage': 'Congratulations, you have found my resume!  But you\'re still hungry...',
+ 	'welcomeMessage': 'Congratulations, you found my resume!  But you\'re still hungry...',
  	'skills': ['programming', 'writing', 'teaching'],
  	'bioPic': 'images/JeffPic.jpg',
  	display: function() {
-/* KEY ATTENTION :  write this functioN!*/
+ 		//fill in the header:
+ 		$('#header').prepend(HTMLheaderName.replace('%data%', this.name));
+ 		$('#name').after(HTMLheaderRole.replace('%data%', this.role));
+
+ 		//fill in the contact info:
+ 		for (prop in this.contacts) {
+ 			$('#topContacts').append(propToVarName(prop).replace('%data%', this.contacts[prop]));
+ 		}
+
+ 		//add the picture
+ 		$('#header').append(HTMLbioPic.replace('%data%', this.bioPic));
+
+ 		//add welcome message
+ 		$('#header').append(HTMLwelcomeMsg.replace('%data%', this.welcomeMessage));
+
+ 		//list the skills
+ 		$('#header').append(HTMLskillsStart);
+ 		for (var i = 0; i < this.skills.length; i++) {
+ 			$('#skills').append(HTMLskills.replace('%data%', this.skills[i]));
+ 		}
  	}
 };
 
@@ -28,7 +56,7 @@ var education = {
 			'name': 'University of California--San Diego',
 			'location': 'La Jolla, CA',
 			'degree': 'B.A.',
-			'majors': ['Linguistics'],
+			'major': 'Linguistics',
 			'dates': 2008,
 			'url': 'http://www.ucsd.edu'
 		},
@@ -36,7 +64,7 @@ var education = {
 			'name': 'UCSD Extension',
 			'location': 'La Jolla, CA',
 			'degree': 'Certification',
-			'majors': ['Teaching English as a Foreign Language'],
+			'major': 'Teaching English as a Foreign Language',
 			'dates': 2009,
 			'url': 'http://extension.ucsd.edu'
 		}
@@ -56,11 +84,27 @@ var education = {
 		}
 	],
 	display: function() {
-/* KEY ATTENTION :  write this functioN!*/
+		for (var i = 0; i < this.schools.length; i++) {
+			//the div to hold the school info
+			$('#education').append(HTMLschoolStart);
+
+			//University link
+			var nameUrl = HTMLschoolName.replace('%data%', this.schools[i].name);
+			nameUrl = nameUrl.replace('#', this.schools[i].url);
+			$('.education-entry').last().append(nameUrl);
+
+			//Date / Time
+			$('.education-entry').last().append(HTMLschoolDates.replace('%data%', this.schools[i].dates));
+			$('.education-entry').last().append(HTMLschoolLocation.replace('%data%', this.schools[i].location));
+
+			//Degree / Major
+			var degMaj = HTMLschoolDegree.replace('%data%', this.schools[i].degree)
+						+ HTMLschoolMajor.replace('%data%', this.schools[i].major);
+			$('.education-entry').last().append(degMaj);
+		}
 	}
 };
 
-//korea, thumbsnail, freelance writer
 var work = {
 	'jobs': [
 		{
@@ -129,3 +173,7 @@ var projects = {
 /* KEY ATTENTION :  write this functioN!*/
 	}
 };
+
+
+bio.display();
+education.display();
