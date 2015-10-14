@@ -1,17 +1,18 @@
 /*
- *
- * JSONs containing all the resume data by section
- *
-*/
-
-/*
 	
 	eval() discovered via:
 	stackoverflow.com/questions/5613834/convert-string-to-variable-name-in-javascript
+	And more info:
+	stackoverflow.com/questions/197769/when-is-javascripts-eval-not-evil
 */
+
 function propToVarName(property) {
 	return eval('HTML' + property);
 }
+
+/*
+ * JSONs containing all the resume data by section:
+*/
 
 var bio = {
 	'name': 'Jeff Derrenberger',
@@ -23,7 +24,7 @@ var bio = {
  		'twitter': '@...I don\'t use Twitter',
  		'location': 'Seattle, WA'
  	},
- 	'welcomeMessage': 'Congratulations, you found my resume!  But you\'re still hungry...',
+ 	'welcomeMessage': 'Hey, hey, you found my resume!  But you\'re still hungry...',
  	'skills': ['programming', 'writing', 'teaching'],
  	'bioPic': 'images/JeffPic.jpg',
  	display: function() {
@@ -84,6 +85,7 @@ var education = {
 		}
 	],
 	display: function() {
+		//Physical Schools:
 		for (var i = 0; i < this.schools.length; i++) {
 			//the div to hold the school info
 			$('#education').append(HTMLschoolStart);
@@ -93,7 +95,7 @@ var education = {
 			nameUrl = nameUrl.replace('#', this.schools[i].url);
 			$('.education-entry').last().append(nameUrl);
 
-			//Date / Time
+			//Date / Place
 			$('.education-entry').last().append(HTMLschoolDates.replace('%data%', this.schools[i].dates));
 			$('.education-entry').last().append(HTMLschoolLocation.replace('%data%', this.schools[i].location));
 
@@ -101,6 +103,24 @@ var education = {
 			var degMaj = HTMLschoolDegree.replace('%data%', this.schools[i].degree)
 						+ HTMLschoolMajor.replace('%data%', this.schools[i].major);
 			$('.education-entry').last().append(degMaj);
+		}
+
+		//Online classes:
+		$('#education').append(HTMLonlineClasses);
+		for (var i = 0; i < this.onlineCourses.length; i++) {
+			//the div to hold the school info
+			$('#education').append(HTMLschoolStart);
+
+			//Online school's link:
+			var schoolUrl = HTMLonlineSchool.replace('%data%', this.onlineCourses[i].school);
+			schoolUrl = schoolUrl.replace('#', this.onlineCourses[i].url);
+			$('.education-entry').last().append(schoolUrl);
+
+			//Date
+			$('.education-entry').last().append(HTMLonlineDates.replace('%data%', this.onlineCourses[i].date));
+
+			//Degree type
+			$('.education-entry').last().append(HTMLonlineTitle.replace('%data%', this.onlineCourses[i].title));
 		}
 	}
 };
