@@ -33,9 +33,7 @@ var bio = {
  		$('#name').after(HTMLheaderRole.replace('%data%', this.role));
 
  		//fill in the contact info:
- 		for (prop in this.contacts) {
- 			$('#topContacts').append(propToVarName(prop).replace('%data%', this.contacts[prop]));
- 		}
+ 		this.displayContacts('#topContacts');
 
  		//add the picture
  		$('#header').append(HTMLbioPic.replace('%data%', this.bioPic));
@@ -47,6 +45,12 @@ var bio = {
  		$('#header').append(HTMLskillsStart);
  		for (var i = 0; i < this.skills.length; i++) {
  			$('#skills').append(HTMLskills.replace('%data%', this.skills[i]));
+ 		}
+ 	},
+ 	displayContacts: function(id) {
+ 		//fill in the contact info:
+ 		for (prop in this.contacts) {
+ 			$(id).append(propToVarName(prop).replace('%data%', this.contacts[prop]));
  		}
  	}
 };
@@ -245,3 +249,4 @@ bio.display();
 education.display();
 work.display();
 projects.display();
+bio.displayContacts('#footerContacts');

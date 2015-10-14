@@ -121,6 +121,10 @@ a {
   font-weight: bold;
 }
 
+.center-text {
+  text-align: center;
+}
+
 .gray {
   background-color: #f3f3f3;
   padding-bottom: 10px;
