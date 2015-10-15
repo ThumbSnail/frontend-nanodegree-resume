@@ -5,41 +5,35 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Jeff Derrenberger's Resume</title>
         <link rel="stylesheet" href="css/style.css">
-    <!--ATTENTION:  should you/can you move these to the end of the file?  What's best as far as loading/etc?-->
         <script src="js/jQuery.js"></script>
         <script src="js/helper.js"></script>
-        <script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+        <!--<script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>-->
     </head>
     <body>
-        <main id="main">
-            <!--Skeleton template of site-->
+        <main id="main"> <!--Skeleton template of site-->
             <header id="header" class="center-content clear-fix">
                 <ul id="topContacts" class="flex-box">
                 </ul>
             </header>
 
-    <!--WHOA!  Doesn't fit style guide, CAMERON.  I'll have to look up what style="clear: both" does.  And... what's the purpose of this div?  Just a spacer?-->
-            <div style="clear: both;"></div>
-
-            <section id="workExperience" class="gray">
-                <h2>Work Experience</h2>
+            <h2>Work Experience</h2>
+            <section id="workExperience" class="flex-box gray">
             </section>
 
-            <section id="projects">
-                <h2>Projects</h2>
+            <h2>Projects</h2>
+            <section id="projects" class="flex-box">
             </section>
 
-            <section id="education" class="gray">
-                <h2>Education</h2>
+            <h2>Education</h2>
+            <section id="education" class="flex-box gray">
             </section>
 
             <section id="mapDiv">
-    <!--ATTN:  I may change this.  Who cares where you've lived, eh?-->
-                <h2>Where I've Lived and Worked</h2>
+                <h2>Where I've Worked and Studied</h2>
             </section>
 
             <footer id="letsConnect" class="dark-gray">
-                <h2 class="orange center-text">Let's Connect</h2>
+                <h2 class="orange center-text">Contact Info</h2>
                 <ul id="footerContacts" class="flex-box">
                 </ul>
             </footer>
@@ -47,46 +41,5 @@
 
         <!--Script that fills in the skeleton template HTML-->
         <script src="js/resumeBuilder.js"></script>
-
-    <!--I wonder if I need to leave in the rest of the code:-->
-        <script type="text/javascript">
-            // Notice how all of a sudden there's JavaScript inside this HTML
-            // document? You can write JavaScript between <script> tags. At the end of your
-            // JavaScript, don't forget the closing script tag with the slash (/).
-
-
-            // Also, this is a JavaScript style comment. You can comment in JavaScript with:
-
-            //   two slashes for all following characters on a single line,  or
-
-            /*
-                an opening and closing set of slash asterisks for block comments.
-            */
-
-
-            if(document.getElementsByClassName('flex-item').length === 0) {
-              document.getElementById('topContacts').style.display = 'none';
-            }
-            if(document.getElementsByTagName('h1').length === 0) {
-              document.getElementById('header').style.display = 'none';
-            }
-            if(document.getElementsByClassName('work-entry').length === 0) {
-              document.getElementById('workExperience').style.display = 'none';
-            }
-            if(document.getElementsByClassName('project-entry').length === 0) {
-              document.getElementById('projects').style.display = 'none';
-            }
-            if(document.getElementsByClassName('education-entry').length === 0) {
-              document.getElementById('education').style.display = 'none';
-            }
-            if(document.getElementsByClassName('flex-item').length === 0) {
-              document.getElementById('lets-connect').style.display = 'none';
-            }
-            if(document.getElementById('map') === null) {
-              document.getElementById('mapDiv').style.display = 'none';
-            }
-        </script>
-    <!--End their hiding code-->
-
     </body>
 </html>
