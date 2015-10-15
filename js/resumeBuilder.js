@@ -1,14 +1,11 @@
 /*
-	
+	Sources:
+	bio.displayContacts() uses eval().
 	eval() discovered via:
 	stackoverflow.com/questions/5613834/convert-string-to-variable-name-in-javascript
 	And more info:
 	stackoverflow.com/questions/197769/when-is-javascripts-eval-not-evil
 */
-
-function propToVarName(property) {
-	return eval('HTML' + property);
-}
 
 /*
  * JSONs containing all the resume data by section:
@@ -19,9 +16,9 @@ var bio = {
  	'role': 'Front-End Web Developer',
  	'contacts': {
  		'mobile': '(555) 555-5555',
- 		'email': 'thumbsnailstudios@gmail.com',
+ 		'email': '{TS}studios@gmail.com',
  		'github': 'ThumbSnail',
- 		'twitter': '@...I don\'t use Twitter',
+ 		'blog': 'thumbsnail.wordpress.com',
  		'location': 'Seattle, WA'
  	},
  	'welcomeMessage': 'Hey, hey, you found my resume!  But you\'re still hungry...',
@@ -50,7 +47,7 @@ var bio = {
  	displayContacts: function(id) {
  		//fill in the contact info:
  		for (prop in this.contacts) {
- 			$(id).append(propToVarName(prop).replace('%data%', this.contacts[prop]));
+ 			$(id).append(eval('HTML' + prop).replace('%data%', this.contacts[prop]));
  		}
  	}
 };
@@ -238,7 +235,6 @@ var projects = {
 			var imageAll = HTMLprojectImage.replace('%alt%', this.portfolio[i].alt);
 			imageAll = imageAll.replace(/%pic2%/g, this.portfolio[i].images[1]);
 			imageAll = imageAll.replace('%pic1%', this.portfolio[i].images[0]);
-			console.log(imageAll);
 			$('.project-entry').last().append(imageAll);
 		}
 	}
@@ -250,3 +246,6 @@ education.display();
 work.display();
 projects.display();
 bio.displayContacts('#footerContacts');
+
+//Add the map
+$('#mapDiv').append(googleMap);
