@@ -83,7 +83,7 @@ function logClicks(x,y) {
 }
 
 $(document).click(function(loc) {
-  // your code goes here!
+  logClicks(loc.pageX, loc.pageY);
 });
 
 
@@ -128,14 +128,14 @@ function initializeMap() {
 
     // iterates through school locations and appends each location to
     // the locations array
-    for (var school in education.schools) {
-      locations.push(education.schools[school].location);
+    for (var i = 0; i < education.schools.length; i++) {
+      locations.push(education.schools[i].location);
     }
 
     // iterates through work locations and appends each location to
     // the locations array
-    for (var job in work.jobs) {
-      locations.push(work.jobs[job].location);
+    for (var i = 0; i < work.jobs.length; i++) {
+      locations.push(work.jobs[i].location);
     }
 
     return locations;
@@ -146,6 +146,9 @@ function initializeMap() {
   placeData is the object returned from search results containing information
   about a single location.
   */
+  //This way, only one infoWindow can be open at a time
+  var infoWindow = new google.maps.InfoWindow();  
+
   function createMapMarker(placeData) {
 
     // The next lines save location data from the search result object to local variables
@@ -164,13 +167,15 @@ function initializeMap() {
     // infoWindows are the little helper windows that open when you click
     // or hover over a pin on a map. They usually contain more information
     // about a location.
-    var infoWindow = new google.maps.InfoWindow({
+    //This was the included way, but it creates multiple instances of infoWindow and, thus,
+      //more than one can be open at the same time.
+    /*var infoWindow = new google.maps.InfoWindow({
       content: name
-    });
+    });*/
 
-    // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
-      // your code goes here!
+      infoWindow.setContent(name);  //This way, only one infoWindow is open at a time.
+      infoWindow.open(map, marker);
     });
 
     // this is where the pin actually gets added to the map.
@@ -203,11 +208,11 @@ function initializeMap() {
     var service = new google.maps.places.PlacesService(map);
 
     // Iterates through the array of locations, creates a search object for each location
-    for (var place in locations) {
+    for (var i = 0; i < locations.length; i++) {
 
       // the search request object
       var request = {
-        query: locations[place]
+        query: locations[i]
       };
 
       // Actually searches the Google Maps API for location data and runs the callback

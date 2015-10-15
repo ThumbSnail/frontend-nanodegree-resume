@@ -13,7 +13,6 @@
     <body>
         <main id="main">
             <!--Skeleton template of site-->
-    <!--KEY: I changed this to the semantic header tag.  Hopefully that doesn't mess up anything, but dbl check.  A css might be affected.-->
             <header id="header" class="center-content clear-fix">
                 <ul id="topContacts" class="flex-box">
                 </ul>
@@ -22,8 +21,6 @@
     <!--WHOA!  Doesn't fit style guide, CAMERON.  I'll have to look up what style="clear: both" does.  And... what's the purpose of this div?  Just a spacer?-->
             <div style="clear: both;"></div>
 
-    <!--KEY: I changed this to the semantic section tag.  Hopefully that doesn't mess up anything, but dbl check.  A css might be affected.-->
-    <!--Also:  is 'article' or 'section' better?-->
             <section id="workExperience" class="gray">
                 <h2>Work Experience</h2>
             </section>
@@ -41,7 +38,6 @@
                 <h2>Where I've Lived and Worked</h2>
             </section>
 
-    <!--KEY: I changed this to the semantic footer tag.  Hopefully that doesn't mess up anything, but dbl check.  A css might be affected.-->
             <footer id="letsConnect" class="dark-gray">
                 <h2 class="orange center-text">Let's Connect</h2>
                 <ul id="footerContacts" class="flex-box">
@@ -49,9 +45,8 @@
             </footer>
         </main>
 
-        <!--Script that fills in the skeleton HTML-->
+        <!--Script that fills in the skeleton template HTML-->
         <script src="js/resumeBuilder.js"></script>
-    <!--^I assume this is because it's not needed right away upon first load AND bc it needs to be run AFTER the structure of the DOM is created initially-->
 
     <!--I wonder if I need to leave in the rest of the code:-->
         <script type="text/javascript">
@@ -62,7 +57,7 @@
 
             // Also, this is a JavaScript style comment. You can comment in JavaScript with:
 
-            //   two slashes for all following characters on a single line, or
+            //   two slashes for all following characters on a single line,  or
 
             /*
                 an opening and closing set of slash asterisks for block comments.

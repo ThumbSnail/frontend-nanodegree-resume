@@ -193,7 +193,7 @@ var projects = {
 		{
 			'title': 'Super Hearts',
 			'date': 'Released March 2015',
-			'description': 'The classic card game "Hearts" with a double deck and all kinds of features.'
+			'description': 'The classic card game "Hearts" but with a double deck and all kinds of features.'
 							+ ' Made with C++ and Cocos2d-x.',
 			'images': [
 				'images/SuperHearts1x.png',
@@ -205,7 +205,7 @@ var projects = {
 		{
 			'title': 'Super Sevens',
 			'date': 'Released Nov (iOS) and Dec (Android) 2014',
-			'description': 'The classic card game "Sevens" with all kinds of features.'
+			'description': 'The classic card game "Sevens" with all kinds of features, including 10 different suits.'
 							+ ' Made with C++ and Cocos2d-x.',
 			'images': [
 				'images/SuperSevens1x.png',
