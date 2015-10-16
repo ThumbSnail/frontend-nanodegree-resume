@@ -19,19 +19,19 @@ var HTMLwelcomeMsg = '<p class="welcome-message light-blue-text center-text">%da
 var HTMLskillsStart = '<h3 id="skills-h3" class="orange-text center-text skills-header">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
 var HTMLskills = '<li class="flex-item"><h3 class="white-text no-margin">%data%</h3></li>';
 
-var HTMLmoreDetails = '<p class="details-shell"><a id="%tag%" href="#" class="details-btn">Expand Details</a></p>';
+var HTMLmoreDetails = '<p class="details-shell"><a href="#" class="details-btn">Expand Details</a></p>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
 var HTMLworkTitle = '<h3>%role%</h3>';
 var HTMLworkJob = '<h3 class="no-margin"><a href="#">%data%</a></h3>';
 var HTMLworkDates = '<p class="date-text">%data%</p>';
 var HTMLworkLocation = '<p class="location-text">%data%</p>';
-var HTMLworkDescription = '<div id="%tag%" class="hidden expanded-text">%data%</div>';
+var HTMLworkDescription = '<div class="hidden expanded-text">%data%</div>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<h3>%data%</h3>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
-var HTMLprojectDescription = '<div id="%tag%" class="hidden expanded-text">%data%</div>';
+var HTMLprojectDescription = '<div class="hidden expanded-text">%data%</div>';
 
 var HTMLlogoImage = '<img class="logo" srcset="%pic2% 2x, %pic1% 1x" src="%pic2%" alt="%alt%">';
 
@@ -90,12 +90,11 @@ function initializeMap() {
         disableDefaultUI: true
     };
 
-    /* 
+    /*
     For the map to be displayed, the googleMap var must be
-    appended to #mapDiv in resumeBuilder.js. 
+    appended to #mapDiv in resumeBuilder.js.
     */
     map = new google.maps.Map(document.querySelector('#map'), mapOptions);
-
 
     /*
     locationFinder() returns an array of every location string from the JSONs
@@ -130,7 +129,7 @@ function initializeMap() {
     about a single location.
     */
     //This way, only one infoWindow can be open at a time
-    var infoWindow = new google.maps.InfoWindow();  
+    var infoWindow = new google.maps.InfoWindow();
 
     function createMapMarker(placeData) {
 
