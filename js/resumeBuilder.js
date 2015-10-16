@@ -33,13 +33,13 @@ var bio = {
  		this.displayContacts('#topContacts');
 
  		//image
-		$('#header').append(HTMLbioPic.replace('%data%', this.bioPic));
+		$('.pic-box').append(HTMLbioPic.replace('%data%', this.bioPic));
 
  		//add welcome message
- 		$('#header').append(HTMLwelcomeMsg.replace('%data%', this.welcomeMessage));
+ 		$('.skills-box').append(HTMLwelcomeMsg.replace('%data%', this.welcomeMessage));
 
  		//list the skills
- 		$('#header').append(HTMLskillsStart);
+ 		$('.skills-box').append(HTMLskillsStart);
  		for (var i = 0; i < this.skills.length; i++) {
  			$('#skills').append(HTMLskills.replace('%data%', this.skills[i]));
  		}
@@ -56,7 +56,7 @@ var education = {
 	'schools': [
 		{
 			'name': 'University of California--San Diego',
-			'location': 'La Jolla, CA',
+			'location': 'San Diego, CA',
 			'degree': 'B.A.',
 			'major': 'Linguistics',
 			'dates': 2008,
@@ -65,7 +65,7 @@ var education = {
 		},
 		{
 			'name': 'UCSD Extension',
-			'location': 'La Jolla, CA',
+			'location': 'San Diego, CA',
 			'degree': 'Certification',
 			'major': 'TEFL',
 			'dates': 2009,
@@ -155,7 +155,7 @@ var work = {
 		},
 		{
 			'employer': 'ThumbSnail Studios (Self)',
-			'title': 'Mobile Game Developer',
+			'title': 'Game Developer',
 			'location': 'Seattle, WA',
 			'dates': 'May 2014 - May 2015',
 			'url': 'http://thumbsnail.wordpress.com/',
@@ -164,7 +164,7 @@ var work = {
 			'logo': ['images/ThumbSnail1x.png', 'images/ThumbSnail2x.png']
 		},
 		{
-			'employer': 'English Program in Korea (EPIK)',
+			'employer': 'English Program in Korea',
 			'title': 'English Teacher',
 			'location': 'Geoje-do, South Korea',
 			'dates': 'August 2009 - January 2010',
@@ -182,7 +182,7 @@ var work = {
 			$('.work-entry').last().append(HTMLworkTitle.replace('%role%', this.jobs[i].title));
 
 			//image (and srcset and alt)
-			var imageAll = HTMLlogoImage.replace('%alt%', this.jobs[i].employer.slice(0, this.jobs[i].employer.length - 7) + ' logo');
+			var imageAll = HTMLlogoImage.replace('%alt%', this.jobs[i].employer + ' logo');
 			imageAll = imageAll.replace(/%pic2%/g, this.jobs[i].logo[1]);
 			imageAll = imageAll.replace('%pic1%', this.jobs[i].logo[0]);
 			$('.work-entry').last().append(imageAll);

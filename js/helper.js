@@ -3,7 +3,7 @@ These are HTML strings. As part of the course, you'll be using JavaScript functi
 replace the %data% placeholder text you see in them.
 */
 var HTMLheaderName = '<h1 id="name" class="white-text">%data%</h1>';
-var HTMLheaderRole = '<span class="subheader">%data%</span><hr/>';
+var HTMLheaderRole = '<p class="orange-text header-role">%data%</p><hr/>';
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="light-blue-text">%contact%</span><span class="white-text">%data%</span></li>';
 var HTMLmobile = '<li class="flex-item"><span class="light-blue-text">mobile</span><span class="white-text">%data%</span></li>';
@@ -16,7 +16,7 @@ var HTMLlocation = '<li class="flex-item"><span class="light-blue-text">location
 var HTMLbioPic = '<img src="%data%" class="biopic" alt="Jeff\'s Picture">';
 var HTMLwelcomeMsg = '<p class="welcome-message light-blue-text center-text">%data%</p>';
 
-var HTMLskillsStart = '<h3 id="skills-h3" class="orange-text center-text">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
+var HTMLskillsStart = '<h3 id="skills-h3" class="orange-text center-text skills-header">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
 var HTMLskills = '<li class="flex-item"><h3 class="white-text no-margin">%data%</h3></li>';
 
 var HTMLmoreDetails = '<p class="details-shell"><a id="%tag%" href="#" class="details-btn">Expand Details</a></p>';
@@ -47,7 +47,7 @@ var HTMLonlineSchool = '<h3 class="no-margin"><a href="#">%data%</a></h3>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 
 var internationalizeButton = '<button>Internationalize</button>';
-var googleMap = '<div id="map"></div>';
+var googleMap = '<div id="map" class="map-image"></div>';
 
 
 /*
