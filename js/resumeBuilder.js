@@ -67,7 +67,7 @@ var education = {
 			'name': 'UCSD Extension',
 			'location': 'La Jolla, CA',
 			'degree': 'Certification',
-			'major': 'Teaching English as a Foreign Language',
+			'major': 'TEFL',
 			'dates': 2009,
 			'url': 'http://extension.ucsd.edu',
 			'logo': ['images/ucsdLogo1x.png', 'images/ucsdLogo2x.png']
@@ -123,7 +123,7 @@ var education = {
 
 			//Degree type
 			$('.education-entry').last().append(HTMLonlineTitle.replace('%data%', this.onlineCourses[i].title));
-			
+
 			//logo (and srcset and alt)
 			var imageAll = HTMLlogoImage.replace('%alt%', this.onlineCourses[i].school + ' logo');
 			imageAll = imageAll.replace(/%pic2%/g, this.onlineCourses[i].logo[1]);
@@ -261,7 +261,7 @@ var projects = {
 			$('.project-entry').last().append(imageAll);
 
 			//link:
-			$('.project-entry').last().append('<a href="' + this.portfolio[i].url + '">Android & iOS</a>');
+			$('.project-entry').last().append('<h4><a href="' + this.portfolio[i].url + '">Android & iOS</a></h4>');
 
 			//More details button
 			$('.project-entry').last().append(HTMLmoreDetails.replace('%tag%', i + 'project'));
@@ -288,7 +288,7 @@ bio.displayContacts('#footerContacts');
 $('#mapDiv').append(googleMap);
 
 //handle clicks on the "More Details" buttons:
-$('.more-details').click(function(event) {
+$('.details-btn').click(function(event) {
     event.preventDefault();  //don't re-adjust the focus (and thus the screen)
 
     var clickedID = $(this).attr('id');  //each link-button has an id like:  2work
