@@ -46,7 +46,7 @@ var bio = {
     },
     displayContacts: function(id) {
         //fill in the contact info:
-        for (prop in this.contacts) {
+        for (var prop in this.contacts) {
             $(id).append(eval('HTML' + prop).replace('%data%', this.contacts[prop]));
         }
     }

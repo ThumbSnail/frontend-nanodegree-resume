@@ -25,7 +25,7 @@
 }
 
 .gray-blue-bg {
-    background-color: #E9F2F1;
+    background-color: #e9f2f1;
 }
 
 /*
@@ -270,6 +270,7 @@ a {
         display: block;
         text-align: center;
     }
+    
     h1 {
         display: block;
         text-align: center;
