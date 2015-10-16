@@ -2,30 +2,30 @@
 These are HTML strings. As part of the course, you'll be using JavaScript functions
 replace the %data% placeholder text you see in them.
 */
-var HTMLheaderName = '<h1 id="name">%data%</h1>';
-var HTMLheaderRole = '<span>%data%</span><hr/>';
+var HTMLheaderName = '<h1 id="name" class="white-text">%data%</h1>';
+var HTMLheaderRole = '<span class="subheader">%data%</span><hr/>';
 
-var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</span></li>';
-var HTMLtwitter = '<li class="flex-item"><span class="orange-text">twitter</span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><span class="white-text">%data%</span></li>';
-var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
-var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
+var HTMLcontactGeneric = '<li class="flex-item"><span class="light-blue-text">%contact%</span><span class="white-text">%data%</span></li>';
+var HTMLmobile = '<li class="flex-item"><span class="light-blue-text">mobile</span><span class="white-text">%data%</span></li>';
+var HTMLGmail = '<li class="flex-item"><span class="light-blue-text">Gmail</span><span class="white-text">%data%</span></li>';
+var HTMLtwitter = '<li class="flex-item"><span class="light-blue-text">twitter</span><span class="white-text">%data%</span></li>';
+var HTMLgithub = '<li class="flex-item"><span class="light-blue-text">github</span><span class="white-text">%data%</span></li>';
+var HTMLblog = '<li class="flex-item"><span class="light-blue-text">blog</span><span class="white-text">%data%</span></li>';
+var HTMLlocation = '<li class="flex-item"><span class="light-blue-text">location</span><span class="white-text">%data%</span></li>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic" alt="Jeff\'s Picture">';
-var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
+var HTMLwelcomeMsg = '<p class="welcome-message light-blue-text center-text">%data%</p>';
 
-var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills"></ul>';
-var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
+var HTMLskillsStart = '<h3 id="skills-h3" class="orange-text center-text">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
+var HTMLskills = '<li class="flex-item"><h3 class="white-text no-margin">%data%</h3></li>';
 
 var HTMLmoreDetails = '<p class="details-shell"><a id="%tag%" href="#" class="details-btn">Expand Details</a></p>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
 var HTMLworkTitle = '<h3>%role%</h3>';
-var HTMLworkJob = '<h4><a href="#">%data%</a></h4>';
-var HTMLworkDates = '<div class="date-text">%data%</div>';
-var HTMLworkLocation = '<div class="location-text">%data%</div>';
+var HTMLworkJob = '<h3 class="no-margin"><a href="#">%data%</a></h3>';
+var HTMLworkDates = '<p class="date-text">%data%</p>';
+var HTMLworkLocation = '<p class="location-text">%data%</p>';
 var HTMLworkDescription = '<div id="%tag%" class="hidden expanded-text">%data%</div>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
@@ -36,14 +36,14 @@ var HTMLprojectDescription = '<div id="%tag%" class="hidden expanded-text">%data
 var HTMLlogoImage = '<img class="logo" srcset="%pic2% 2x, %pic1% 1x" src="%pic2%" alt="%alt%">';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
-var HTMLschoolName = '<h4><a href="#">%data%</a></h4>';
+var HTMLschoolName = '<h3 class="no-margin"><a href="#">%data%</a></h3>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 var HTMLschoolDegree = '<h3>%data%';
 var HTMLschoolMajor = ' - %data%</h3>';
 
 var HTMLonlineTitle = '<h3>%data%</h3>';
-var HTMLonlineSchool = '<h4><a href="#">%data%</a></h4>';
+var HTMLonlineSchool = '<h3 class="no-margin"><a href="#">%data%</a></h3>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 
 var internationalizeButton = '<button>Internationalize</button>';

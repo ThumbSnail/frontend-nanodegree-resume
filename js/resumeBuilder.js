@@ -16,7 +16,7 @@ var bio = {
  	'role': 'Front-End Web Developer',
  	'contacts': {
  		'mobile': '(555) 555-5555',
- 		'email': 'thumbsnailstudios@gmail.com',
+ 		'Gmail': 'thumbsnailstudios',
  		'github': 'ThumbSnail',
  		'blog': 'thumbsnail.wordpress.com',
  		'location': 'Seattle, WA'
@@ -261,7 +261,7 @@ var projects = {
 			$('.project-entry').last().append(imageAll);
 
 			//link:
-			$('.project-entry').last().append('<h4><a href="' + this.portfolio[i].url + '">Android & iOS</a></h4>');
+			$('.project-entry').last().append('<h3 class="no-margin"><a href="' + this.portfolio[i].url + '">Android & iOS</a></h3>');
 
 			//More details button
 			$('.project-entry').last().append(HTMLmoreDetails.replace('%tag%', i + 'project'));
