@@ -199,8 +199,8 @@ var work = {
             $('.work-entry').last().append(HTMLworkDescription.replace('%data%', this.jobs[i].description));
 
             //Date and location (placed inside the More Details - Description div)
-            $('#work' + i).prepend(HTMLworkLocation.replace('%data%', this.jobs[i].location));
-            $('#work' + i).prepend(HTMLworkDates.replace('%data%', this.jobs[i].dates));
+            $('.expanded-text').last().prepend(HTMLworkLocation.replace('%data%', this.jobs[i].location));
+            $('.expanded-text').last().prepend(HTMLworkDates.replace('%data%', this.jobs[i].dates));
         }
     }
 };
@@ -268,7 +268,7 @@ var projects = {
             $('.project-entry').last().append(HTMLprojectDescription.replace('%data%', this.portfolio[i].description));
 
             //Release date (placed inside the More Details - Description div)
-            $('#project' + i).prepend(HTMLprojectDates.replace('%data%', this.portfolio[i].date));}
+            $('.expanded-text').last().prepend(HTMLprojectDates.replace('%data%', this.portfolio[i].date));}
     }
 };
 
