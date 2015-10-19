@@ -23,7 +23,7 @@ var HTMLmoreDetails = '<p class="details-shell"><a href="#" class="details-btn">
 
 var HTMLworkStart = '<div class="work-entry"></div>';
 var HTMLworkTitle = '<h3>%role%</h3>';
-var HTMLworkJob = '<h3 class="no-margin"><a href="#">%data%</a></h3>';
+var HTMLworkJob = '<h3 class="no-margin"><a href="#" target="_blank">%data%</a></h3>';
 var HTMLworkDates = '<p class="date-text">%data%</p>';
 var HTMLworkLocation = '<p class="location-text">%data%</p>';
 var HTMLworkDescription = '<div class="hidden expanded-text">%data%</div>';
@@ -36,14 +36,14 @@ var HTMLprojectDescription = '<div class="hidden expanded-text">%data%</div>';
 var HTMLlogoImage = '<img class="logo" srcset="%pic2% 2x, %pic1% 1x" src="%pic2%" alt="%alt%">';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
-var HTMLschoolName = '<h3 class="no-margin"><a href="#">%data%</a></h3>';
+var HTMLschoolName = '<h3 class="no-margin"><a href="#" target="_blank">%data%</a></h3>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 var HTMLschoolDegree = '<h3>%data%';
 var HTMLschoolMajor = ' - %data%</h3>';
 
 var HTMLonlineTitle = '<h3>%data%</h3>';
-var HTMLonlineSchool = '<h3 class="no-margin"><a href="#">%data%</a></h3>';
+var HTMLonlineSchool = '<h3 class="no-margin"><a href="#" target="_blank">%data%</a></h3>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 
 var internationalizeButton = '<button>Internationalize</button>';
