@@ -288,4 +288,11 @@ $('.details-btn').click(function(event) {
     event.preventDefault();  //don't re-adjust the focus (and thus the screen)
 
     $(this).parent().next().toggle('hidden');  //grab the description div
+
+    if ($(this).text() === "Expand Details") {
+        $(this).text("Hide Details");
+    }
+    else {
+        $(this).text("Expand Details");
+    }
 });
